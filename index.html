@@ -1,0 +1,203 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;" />
+<title>周辉名片</title>
+	<meta name="description" content="我的名片、我做主、我是周辉，我为自己代言"/>
+	 
+<style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+
+/* Elements */
+
+body { background:#f3f3f3; font-family:Helvetica,"微软雅黑","黑体",Arial,Tahoma;line-height:1.5;text-shadow:0 1px 0px #fff;text-align:center;margin-top:40px;color:#666; }
+
+a:link,a:visited { color:#55a;text-decoration:none; }
+a:hover, a:active { color:#55a;text-decoration:underline; }
+
+/* Elements */
+
+
+.left {float:left}
+.right {float:right}
+.clear {clear:both}
+
+
+.mask { background:#fff;width:100%;height:100%;position:absolute;z-index:998;top:0;left:0;opacity:0.8; }
+
+.dialog { width:400px;border:1px solid #bebebe;position:absolute;z-index:999;box-shadow:0 6px 10px #ccc;border-radius:3px; }
+.dialogContainer { width:100%;border-top:1px solid #fff;background:#333;border-radius:4px;background: -moz-linear-gradient(top, #f0f0f0, #e5e5e5);background: -webkit-gradient(linear, 0 0, 0 100%, from(f0f0f0), to(e5e5e5));}
+.dialogContent { min-height:60px;padding:40px 20px 10px;font-size:20px;color:#666;text-shadow:0 1px 0 #fff;text-align:center;}
+
+
+
+.dialogOperator { padding:10px 20px 20px;text-align:center;margin:0 auto;overflow:hidden; }
+.dialogOperator .inwrap{ float:left; position:relative; left:50%;}
+.dialogOperator .wrapContent { float:left; position:relative; left:-50%; }
+.dialog a.btn { display:block;border-radius:3px;float:left;text-align:center;text-decoration:none;margin:0px 5px 1px 5px; }
+.dialog a.btn b { display:block;height:30px;border-radius:2px;font-size:16px;line-height:30px;text-shadow:none;text-align:center;padding:0 40px;}
+.dialog a.btn:active { margin:1px 5px 0 5px; }
+
+.tourTip .dialogContainer {background:#f0f0f0;background: -moz-linear-gradient(top, #fff, #f9f9f9);background: -webkit-gradient(linear, 0 0, 0 100%, from(fff), to(f9f9f9));}
+.tourTipContent {padding:50px 20px 20px;  }
+.tourTipContent .desc {padding:20px 0;  }
+
+.dialog a.btnClose { position:absolute;right:0;margin:10px;width:24px;height:24px;border-radius:20px;}
+.dialog a.btnClose:hover,.dialog a.btnClose:active { background:#ddd;}
+
+.dialog a.btnClose img { margin:5px 5px 5px 5px; }
+/* Layout */
+
+.container {}
+.clr { clear:both;height:1px;overflow:hidden; }
+.clrLeft { clear:left;height:1px;overflow:hidden; }
+.clrRight { clear:right;height:1px;overflow:hidden; }
+
+
+
+.loginPanel { margin: 10px auto; height:380px; border-radius:4px;text-align:center; }
+
+.loginPanel .title { border-radius:4px 4px 0 0;height:50px;text-shadow:0 1px 0 #fff;font-size:12px;line-height:50px; }
+
+.loginPanel .hui { border-radius:4px 4px 0 0;height:50px;text-shadow:0 1px 0 #fff;font-size:25px;line-height:50px; }  
+  
+.loginPanel .panelContent { padding:20px; }
+.loginPanel .zt { font-size:15px; line-height:10px; line-height:20px;}
+.loginPanel .ztt { font-size:8px; line-height:10px; }
+.loginPanel .zw { font-size:15px; line-height:30px;}
+.loginPanel .sm { font-size:17px; line-height:12px; }
+.loginPanel .zm { font-size:11px; line-height:0px; }
+
+.loginPanel .en { font-size:11px; line-height:10px; }
+.loginPanel .tel { font-size:25px; line-height:10px;line-height:40px; }
+.loginPanel .ty { font-size:10px; line-height:10px; line-height:20px; }
+	
+.loginPanel .qrcode { width:150px; box-shadow:0 6px 6px #999999; }
+.loginPanel .weixin { width:80px;  }
+.loginPanel .zhouhuiimg { width:200px; }
+.loginPanel .info { margin:10px 0 0; }
+.loginPanel .normlDesc { }
+.loginPanel .zhouhui { font-size:25px;line-height:30px;}
+.loginPanel .huizhou { font-size:11px; line-height:10px; }
+.loginPanel .errorMsg { display:none; }
+.loginPanel a.operatorBtn { margin-top:10px; }
+.loginPanel .ls { color:#00a0e9 !important; border-radius:4px 4px 0 0;height:50px;text-shadow:0 1px 0 #fff; line-height:30px;font-size:22px; }
+
+
+.zoomIn { cursor:-webkit-zoom-in; cursor: -moz-zoom-in;  }
+.zoomOut { cursor:-webkit-zoom-out; cursor: -moz-zoom-out; }
+
+
+
+
+
+/* Color Scheme */
+
+.slidePic { position:absolute;float:left; }
+.slidePic img { position:absolute;box-shadow:0px 4px 30px #333;z-index:49; }
+
+.normalPanel { }
+
+.lightText { color:#ccc;}
+
+/*tmp style*/ 
+</style>
+</head>
+<body>
+<div id="title">
+</div>
+<div class="main">
+
+<div class="loginPanel normalPanel">
+
+
+<div class="waiting panelContent">
+<img class="qrcode lightBorder" src="https://tel.zhouhui.org/img/zhouhui.jpg">
+<div class="info">
+
+ 
+
+<p><a href="tel:13533206627"><img src="https://tel.zhouhui.org/img/tel.png" width="70" height="71"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="sms:13533206627"><img src="https://tel.zhouhui.org/img/sms.png" width="72" height="73"></a></p>
+
+	<div class="zhouhui">姓名：周辉</div>
+		<div class="sm">Name:zhou hui</div></p>
+
+	<div class="zw">（职位：店长）</div>
+			<div class="zm">Store Manager</div></p>
+
+<div class="info">
+
+	<p><a class="ls"> 中域电讯连锁集团股份有限公司 </a>
+	<div class="en">ZHONGYU TELECOM CHAIN GROUP STOCK CO.LTD</div></p>
+
+	<p class="tel">Tel:+86-13533206627</p>
+	<p class="ty">E-MAIL:INFO@ZHOUHUI.ORG &nbsp; WEB:BLOG.ZHOUHUI.ORG</p>
+
+<p class="zt">地址：广东省中山市横栏镇顺兴南路2号</p>
+	<p class="ztt">Address : Guangdong Zhongshan Henglan Town Shunxing South Road No.2</p>
+<marquee style="WIDTH: 250px; HEIGHT: 20px" scrollamount="5" direction="Left" >
+<div align="left" >
+</div >
+<center ><font face="黑体" color="#008000" size="4" ></font ></center >
+<div align="left" >
+</div >
+<center >
+<p ><font color="#919191" size="3" >点击电话或者信息图标、可以直接联系我</font ></p >
+</marquee >
+
+<p><img class="weixin lightBorder" src="https://tel.zhouhui.org/img/wx.png"></p>
+<div class="huizhou">扫一扫或者按住二维码识别添加微信好友</div>
+
+<script>
+function stop(){
+return false;
+}
+document.oncontextmenu=stop;
+</script>
+
+
+
+<head>
+<script>
+function clear(){
+Source=document.body.firstChild.data;
+document.open();
+document.close();
+document.title="看不到源代码";
+document.body.innerHTML=Source;
+}</script>
+</head>
+
+</head>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
